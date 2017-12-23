@@ -1,7 +1,7 @@
 <!--模板3-->
 <table class="table table-bordered table-hover table-condensed">
     <tbody>
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     {% assign inx = forloop.index | modulo: 4 %}
     {% if inx == 1 %}
     <tr class="success">
@@ -36,3 +36,4 @@
     {% endfor %}
     </tbody>
 </table>
+{% include paginator.html %}

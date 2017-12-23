@@ -6,10 +6,18 @@
     {% include head.html %}
 </head>
 <body>
+{% include topbar.html %}
 <div class="container">
-    {% include topbar.html %}
     {% include home/home_part1.html %}
     {% include home/home_part2.html %}
+
+    <footer>
+        <div class="row">
+            <div class="col-md-12 column">
+                {% include copyright.html %}
+            </div>
+        </div>
+    </footer>
 </div>
 </body>
 </html>
