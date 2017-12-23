@@ -1,0 +1,6 @@
+<!--模板2-->
+{% for post in site.posts %}
+<p>
+    <a class="btn" href="{{ post.url }}">{{ post.title }} »{{ post.date | date_to_string }}</a>
+</p>
+{% endfor %}

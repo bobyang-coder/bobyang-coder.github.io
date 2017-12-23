@@ -1,0 +1,38 @@
+<!--模板3-->
+<table class="table table-bordered table-hover table-condensed">
+    <tbody>
+    {% for post in site.posts %}
+    {% assign inx = forloop.index | modulo: 4 %}
+    {% if inx == 1 %}
+    <tr class="success">
+        {% elsif inx == 2 %}
+    <tr class="warning">
+        {% elsif inx == 3 %}
+    <tr class="info">
+        {% else %}
+    <tr class="error">
+        {% endif %}
+        <td>
+            <h3>
+                <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+                {% for category in post.categories %}
+                {% assign inx = forloop.index | modulo: 4 %}
+                {% if inx == 1 %}
+                {% assign type = 'success' %}
+                {% elsif inx == 2 %}
+                {% assign type = 'warning' %}
+                {% elsif inx == 3 %}
+                {% assign type = 'info' %}
+                {% else %}
+                {% assign type = 'error' %}
+                {% endif %}
+                <span class="label label-{{ type }}">{{ category }}</span>
+                {% endfor %}
+                <small>{{ post.date | date_to_string }}</small>
+            </h3>
+            <p>{{ post.desc }}</p>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>

@@ -1,0 +1,34 @@
+<!-- 模板1 -->
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">
+                    {{ page.title }}
+                </h2>
+                {% for category in page.categories %}
+                {% assign inx = forloop.index | modulo: 4 %}
+                {% if inx == 1 %}
+                {% assign type = 'success' %}
+                {% elsif inx == 2 %}
+                {% assign type = 'warning' %}
+                {% elsif inx == 3 %}
+                {% assign type = 'info' %}
+                {% else %}
+                {% assign type = 'error' %}
+                {% endif %}
+                <span class="label label-{{ type }}">
+                {{ category }}
+                </span>
+                {% endfor %}
+                <!--总字数：{{ page.content | number_of_words }}-->
+            </div>
+            <div class="panel-body">
+                {{ content }}
+            </div>
+            <div class="panel-footer">
+                创建时间:{{ page.date | date_to_string }}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    {% include head.html %}
+</head>
+<body>
+<div class="container">
+    {% include topbar.html %}
+    {{ content }}
+    <!-- 分页链接 -->
+    {% include paginator.html %}
+</div>
+</body>
+</html>

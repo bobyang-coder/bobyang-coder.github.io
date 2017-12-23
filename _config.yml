@@ -1,0 +1,70 @@
+#======jekyll配置=======##
+#基础路径跟项目名称一致
+baseurl: ''
+
+# 构建设置
+markdown: kramdown
+excerpt_separator: "<!-- more -->"
+#代码高亮设置
+highlighter: rouge
+
+# Markdown设置
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+#  syntax_highlighter_opts:
+#   span:
+#    line_numbers: true
+#    start_line: 1
+#   block:
+#    line_numbers: true
+#    start_line: 1
+
+# 插件
+#gems:
+#  - jekyll-gist
+#  - jekyll-paginate
+#plugins:
+# - jekyll-paginate
+#======输出设置==========##
+#设置每篇文章链接格式
+permalink: /:year/:month/:day/:title/
+#分页
+paginate: 5
+paginate_path: "/page:num"
+
+#======个人配置==========##
+# Author info
+author:
+  name                  : Your Name
+  rss                       : true # generate RSS feed and show it's icon in header
+  mail                      : bobyang_coder@163.com # change to your e-mail address
+  twitter                   : twitter-user-name
+  github                    : bobyang
+  youtube                   : youtube-user-name
+  stackoverflow             : stackoverflow-user-name
+  disqus                    : dactl # your disqus site name
+  google_analytics          : # 'UA-XXXXXXXX-X'
+  photo                     : "uploads/me2.png"
+  photo2x                   : "uploads/me.png"
+
+#标题链接
+links:
+  - name:         首页
+    url:          /
+    external:     false
+  - name:         开发
+    url:          /articles/dev
+    external:     false
+  - name:         运维
+    url:          /articles/operation
+    external:     false
+  - name:         归档
+    url:          /archives
+    external:     false
+  - name:         标签
+    url:          /tags
+    external:     false
+  - name:         关于
+    url:          /about
+    external:     false
