@@ -32,7 +32,7 @@ kramdown:
 #设置每篇文章链接格式
 permalink: /:year/:month/:day/:title/
 #分页
-paginate: 5
+paginate: 2
 paginate_path: ":num"
 
 #======个人配置==========##
