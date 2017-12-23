@@ -26,8 +26,8 @@ kramdown:
 #gems:
 #  - jekyll-gist
 #  - jekyll-paginate
-#plugins:
-# - jekyll-paginate
+plugins:
+ - jekyll-paginate
 #======输出设置==========##
 #设置每篇文章链接格式
 permalink: /:year/:month/:day/:title/
