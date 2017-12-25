@@ -14,7 +14,10 @@
         {% endif %}
         <td>
             <h3>
-                <a href="{{ post.url }}"><h3>{{ post.title }}</h3></a>
+                <h3>
+                    <a href="{{ post.url }}">{{ post.title }}</a>
+                    <small><em>{{ post.date | date_to_string }}</em></small>
+                </h3>
                 {% for category in post.categories %}
                 {% assign inx = forloop.index | modulo: 4 %}
                 {% if inx == 1 %}
@@ -23,12 +26,16 @@
                 {% assign type = 'warning' %}
                 {% elsif inx == 3 %}
                 {% assign type = 'info' %}
+                {% elsif inx == 4 %}
+                {% assign type = 'default' %}
+                {% elsif inx == 5 %}
+                {% assign type = 'danger' %}
                 {% else %}
                 {% assign type = 'error' %}
                 {% endif %}
-                <span class="label label-{{ type }}">{{ category }}</span>
+                <span class="btn btn-xs btn-{{ type }}">{{ category }}</span>
                 {% endfor %}
-                <small>{{ post.date | date_to_string }}</small>
+
             </h3>
             <p>{{ post.desc }}</p>
         </td>

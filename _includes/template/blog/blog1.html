@@ -1,7 +1,7 @@
 <!-- 模板1 -->
 <div class="row clearfix">
     <div class="col-md-12 column">
-        <div class="panel panel-default">
+        <div class="panel panel-success">
             <div class="panel-heading">
                 <h2 class="panel-title">
                     {{ page.title }}
@@ -17,7 +17,7 @@
                 {% else %}
                 {% assign type = 'error' %}
                 {% endif %}
-                <span class="label label-{{ type }}">
+                <span class="btn btn-xs btn-{{ type }}">
                 {{ category }}
                 </span>
                 {% endfor %}
