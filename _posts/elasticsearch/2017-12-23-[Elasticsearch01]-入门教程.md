@@ -2,7 +2,7 @@
 layout: blog
 title: Elasticsearch01-入门教程
 categories: [java, Elasticsearch,]
-desc: 官方安装教程：https://www.elastic.co/guide/en/elasticsearch/reference/6.0/zip-targz.html
+desc: centos安装Elasticsearch
 ---
 
 ### 1.centos安装Elasticsearch
