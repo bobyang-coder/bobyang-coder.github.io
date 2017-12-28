@@ -32,8 +32,8 @@ plugins:
 #设置每篇文章链接格式
 permalink: /:year/:month/:day/:title/
 #分页
-paginate: 2
-paginate_path: ":num"
+paginate: 8
+paginate_path: "/articles/dev/:num"
 
 #======个人配置==========##
 # Author info

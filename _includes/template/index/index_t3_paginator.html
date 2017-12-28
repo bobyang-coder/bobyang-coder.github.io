@@ -1,7 +1,9 @@
-<!--模板3-->
+<!--模板3
+    带分页功能
+-->
 <table class="table table-bordered table-hover table-condensed">
     <tbody>
-    {% for post in site.posts %}
+    {% for post in paginator.posts %}
     {% assign inx = forloop.index | modulo: 4 %}
     {% if inx == 1 %}
     <tr class="success">
@@ -43,3 +45,5 @@
     {% endfor %}
     </tbody>
 </table>
+<!-- 分页链接 -->
+{% include paginator.html %}
