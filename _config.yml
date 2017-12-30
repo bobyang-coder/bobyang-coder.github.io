@@ -33,12 +33,13 @@ plugins:
 permalink: /:year/:month/:day/:title/
 #分页
 paginate: 8
-paginate_path: "/articles/dev/:num"
+paginate_path: "/:num"
 
 #======个人配置==========##
 # Author info
 author:
-  name                  : Your Name
+  url                       : tech.boilin.cn
+  name                      : Bobyang
   rss                       : true # generate RSS feed and show it's icon in header
   mail                      : bobyang_coder@163.com # change to your e-mail address
   twitter                   : twitter-user-name
@@ -51,22 +52,22 @@ author:
   photo2x                   : "uploads/me.png"
 
 #标题链接
-links:
+modules:
   - name:         首页
     url:          /
-    external:     false
-  - name:         开发
-    url:          /articles/dev
-    external:     false
+  - name:         架构
+    url:          /m2-architecture
+  - name:         技术
+    url:          /m4-tech
   - name:         运维
-    url:          /articles/operation
-    external:     false
+    url:          /m6-operation
+  - name:         行业
+    url:          /m7-industry
+  - name:         其他
+    url:          /m9-other
   - name:         归档
     url:          /archives
-    external:     false
   - name:         标签
     url:          /tags
-    external:     false
   - name:         关于
     url:          /about
-    external:     false

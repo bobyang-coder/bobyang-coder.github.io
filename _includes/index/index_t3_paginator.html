@@ -1,0 +1,42 @@
+<!--模板3
+    带分页功能
+-->
+<table class="table table-bordered table-hover table-condensed">
+    <tbody>
+    {% assign posts = site.categories[page.module] %}
+    {% for post in posts %}
+    {% assign inx = forloop.index | modulo: 4 %}
+    {% if inx == 1 %}
+    <tr class="success">
+        {% elsif inx == 2 %}
+    <tr class="warning">
+        {% elsif inx == 3 %}
+    <tr class="info">
+        {% else %}
+    <tr class="error">
+        {% endif %}
+        <td>
+            <h3>
+                <a href="{{ post.url }}">{{ post.title }}</a>
+                <small><em>{{ post.date | date_to_string }}</em></small>
+            </h3>
+            {% for category in post.tags %}
+            {% assign inx = forloop.index | modulo: 4 %}
+            {% if inx == 1 %}
+            {% assign type = 'success' %}
+            {% elsif inx == 2 %}
+            {% assign type = 'warning' %}
+            {% elsif inx == 3 %}
+            {% assign type = 'info' %}
+            {% else %}
+            {% assign type = 'danger' %}
+            {% endif %}
+            <span class="btn btn-xs btn-{{ type }}">{{ category }}</span>
+            {% endfor %}
+            <p>{{ post.content | strip_html | truncate:150 }}</p>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+<!-- 分页链接 -->

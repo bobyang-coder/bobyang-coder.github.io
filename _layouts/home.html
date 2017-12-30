@@ -1,17 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ page.title }}</title>
-    {% include head.html %}
-</head>
-<body>
+---
+layout: default
+---
 <div class="container">
-    {% include topbar.html %}
-    {% include home/home_part1.html %}
-    {% include home/home_part2.html %}
-    <!--{% include sidebar.html %}-->
-    {% include footer.html %}
+    <div class="row clearfix">
+        <div class="col-md-8 column">
+            {% for post in paginator.posts %}
+            <div class="jumbotron">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                    <h3>
+                        {{ post.title }}
+                    </h3>
+                    <div>
+                        {{ post.content | strip_html | truncate:200 }}
+                    </div>
+                </a>
+                <blockquote class="pull-right">
+                    <small>Posted by
+                        <cite>
+                            {% if post.author %}{{ post.author }}{% else %}{{ site.author.name }}{% endif %}
+                            on {{ post.date | date: "%B %-d, %Y" }}
+                        </cite>
+                    </small>
+                </blockquote>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-3 column">
+
+        </div>
+    </div>
+    <!-- 分页链接 -->
+    {% include paginator.html %}
 </div>
-</body>
-</html>

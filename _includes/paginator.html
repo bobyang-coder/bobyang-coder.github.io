@@ -1,2 +1,48 @@
 <!--分页-->
-{% include template/paginator/paginator_3.html %}
+<div class="row clearfix">
+    <div class="col-md-12 column">
+        <div style="text-align:center;">
+            <!--测试success-->
+            <ul class="pagination">
+                {% if paginator.total_pages > 1 %}
+                {% if paginator.previous_page %}
+                <li>
+                    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | prepend: site.url }}"
+                       aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                <li class="active"><span>{{ page }}</span></li>
+                {% elsif page == 1 %}
+                <li>
+                    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', '' }}">
+                        {{ page}}
+                    </a>
+                </li>
+                {% else %}
+                <li>
+                    <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">
+                        {{page}}
+                    </a>
+                </li>
+                {% endif %}
+                {% endfor %}
+                {% if !paginator.next_page %}
+                <li>
+                    <a href="{{ paginator.next_page_path | prepend: site.baseurl | prepend: site.url }}"
+                       aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% endif %}
+                <li class="disabled">
+                    <span>第{{paginator.page}}页 / 共{{paginator.total_pages}}页</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<!--module主页模板4，仅有标题-->
+<div class="container">
+    {% if order_by %}
+    <!--按order_by排序-->
+    {% assign posts = site.categories[page.module] | sort:order_by %}
+    {% else %}
+    <!--不排序-->
+    {% assign posts = site.categories[page.module] %}
+    {% endif %}
+    {% for post in posts %}
+    <p>
+        <a class="btn" href="{{ post.url }}">{{ forloop.index }}.{{ post.title }} »{{ post.date | date_to_string }}</a>
+    </p>
+    {% endfor %}
+</div>
