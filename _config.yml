@@ -39,7 +39,7 @@ paginate_path: "/:num"
 # Author info
 author:
   url                       : tech.boilin.cn
-  name                      : Bobyang
+  name                      : bobyang
   rss                       : true # generate RSS feed and show it's icon in header
   mail                      : bobyang_coder@163.com # change to your e-mail address
   twitter                   : twitter-user-name
